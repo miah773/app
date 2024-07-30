@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Liste des Enseignants</h4>
+                                    <h4 class="mb-sm-0 font-size-18">Liste des Formations</h4>
 
                                  
                                 </div>
@@ -25,21 +25,15 @@
                                 <div class="card">
                                     <div class="card-body">
         
-                                        <h4 class="card-title">Vous pouvez supprimer ou modifier des informations concernant les Enseignant</h4>
+                                        <h4 class="card-title">Vous pouvez supprimer ou modifier des informations concernant les Formation</h4>
                                        <br />
                                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                             <thead>
                                             <tr>
                                                 <th>Nom</th>
-                                                <th>prenom</th>
-                                                <th>email</th>
-                                                <th>poste</th>
-                                                <th>specilite</th>
-                                                <th>tel</th>
-                                                <th>CIN</th>
-                                                <th>date_rec</th>
-                                                <th>Action</th>
-
+                                                <th>acronyme</th>
+                                                <th>description</th>
+                                                <th>action</th>
                    
                                             </tr>
                                             </thead>
@@ -48,15 +42,10 @@
                                             <tbody>
                                             @foreach($data as $item)
                                             <tr>
-                                                <td style="vertical-align: middle; width:10%; ">{{$item->enseignant_nom}}</td>
-
-                                                <td style="vertical-align: middle; width:10%; ">{{$item->enseignant_prenom}}</td>
-                                                <td style="vertical-align: middle; width:10%; ">{{$item->enseignant_email}}</td>
-                                                <td style="vertical-align: middle; width:10%; ">{{$item->enseignant_poste}}</td>
-                                                <td style="vertical-align: middle; width:10%; ">{{$item->specalite_nom}}</td>
-                                                <td style="vertical-align: middle; width:10%; ">{{$item->enseignant_tel}}</td>
-                                                <td style="vertical-align: middle; width:10%; ">{{$item->enseignant_CIN}}</td>
-                                                <td style="vertical-align: middle; width:10%; ">{{$item->enseignant_date_rec}}</td>
+                                                <td style="vertical-align: middle; width:20%; ">{{$item->nom}}</td>
+                                                <td style="vertical-align: middle; width:20%; ">{{$item->acronyme}}</td>
+                                                <td style="vertical-align: middle; width:20%; ">{{$item->description}}</td>
+                                                
                                                 
                                                 <td style="vertical-align: middle; width:20%; ">
                                                 <button class="btn btn-warning btn-sm" 
@@ -67,7 +56,7 @@
                                                 </button>
 
 
-                                                <form action="{{ route('Enseignant.destroy', ['id' => $item->id]) }}" method="POST" style="display:inline;">
+                                                <form action="{{ route('formation.destroy', ['id' => $item->id]) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
@@ -97,7 +86,7 @@
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Modifier l'Enseignant</h5>
+                <h5 class="modal-title" id="editModalLabel">Modifier la formation</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -107,42 +96,19 @@
          
 
                     <div class="d-flex align-items-center mb-3">
-                    <label for="editNom" class="form-label" style="width: 30%;">Nom</label>
+                    <label for="editNom" class="form-label" style="width:   30%;">Nom</label>
                         <input type="text" class="form-control" id="editNom" name="nom" required>
                     </div>
                     <div class="d-flex align-items-center mb-3">
-                    <label for="prenom" class="form-label" style="width: 30%;">Prénom</label>
-                        <input type="text" class="form-control" id="prenom" name="prenom" required>
+                    <label for="acronyme" class="form-label" style="width: 30%;">acronyme</label>
+                        <input type="text" class="form-control" id="acronyme" name="acronyme" required>
                     </div>
                     <div class="d-flex align-items-center mb-3">
-                    <label for="email" class="form-label" style="width: 30%;">email</label>
-                        <input type="text" class="form-control" id="email" name="email" required>
-                    </div>
-                    <div class="d-flex align-items-center mb-3">
-                    <label for="poste" class="form-label" style="width: 30%;">poste</label>
-                        <input type="text" class="form-control" id="poste" name="poste" required>
+                    <label for="description" class="form-label" style="width: 40%;">description</label>
+                        <input type="text" class="form-control" id="description" name="description" required>
                     </div>
                     
-
-                    <div class="d-flex align-items-center mb-3">
-                    <label for="spec" class="form-label" style="width: 30%;">Spécialité</label>
-                        <select id="spec"  class="form-control" name="spec">    <option>Spécialité</option>
-                        </select>
-                    </div>
                     
-
-                    <div class="d-flex align-items-center mb-3">
-                    <label for="tel" class="form-label" style="width: 30%;">tel</label>
-                        <input type="text" class="form-control" id="tel" name="tel" required>
-                    </div>
-                    <div class="d-flex align-items-center mb-3">
-                    <label for="CIN" class="form-label" style="width: 30%;">CIN</label>
-                        <input type="text" class="form-control" id="CIN" name="CIN" required>
-                    </div>
-                    <div class="d-flex align-items-center mb-3">
-                    <label for="date_rec" class="form-label" style="width: 300%;">Date_rec</label>
-                        <input type="date" class="form-control" id="date_rec" name="date_rec" required>
-                    </div>
 
                     <!-- Ajoutez les autres champs ici -->
                     <button type="submit" class="btn btn-primary" style="width:100%;">Enregistrer les modifications</button>
@@ -158,37 +124,17 @@ document.addEventListener('DOMContentLoaded', function () {
         var button = event.relatedTarget;
         var clientId = button.getAttribute('data-id');
         var form = document.getElementById('editForm');
-        form.setAttribute('action', '/enseignant/' + clientId);
+        form.setAttribute('action', '/formation/' + clientId);
 
-        fetch('/enseignant/' + clientId)
+        fetch('/formation/' + clientId)
             .then(response => response.json())
             .then(data => {
-                var sp = data.enseignants;
-                var specialites = data.specialites;
-
+                var sp = data.formation;
+                       
 
                 document.getElementById('editNom').value = sp.nom;
-                document.getElementById('prenom').value = sp.prenom;
-                document.getElementById('email').value = sp.email;
-                document.getElementById('poste').value = sp.poste;
-                specialites.forEach(specialite => { 
-                    var option = document.createElement('option'); 
-                    option.value = specialite.id; 
-                    option.textContent = specialite.nom; 
-                    if (specialite.id == sp.id_specialite)
-                    { 
-                            option.selected = true; } 
-                            spec.appendChild(option);
-                
-                });
-
-
-
-                document.getElementById('tel').value = sp.tel;
-                document.getElementById('CIN').value = sp.CIN;
-                document.getElementById('date_rec').value = sp.date_rec;
-
-
+                document.getElementById('acronyme').value = sp.acronyme;
+                document.getElementById('description').value = sp.description;
 
 
              

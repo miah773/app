@@ -322,7 +322,7 @@
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="{{route('listeenseignant')}}" key="t-p-list">Liste des Enseignant</a></li>
-                                <li><a href="{{route('enseignant.create')}}" key="t-create-new">Créer un nouveau</a></li>
+                                <li><a href="{{route('enseignant.create')}}" key="t-create-new">Créer un nouveau enseignant</a></li>
 
                                 </ul>
                             </li>
@@ -330,22 +330,22 @@
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Sociétés</span>
+                                    <span key="t-crypto">Formation</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="" key="t-p-list">Liste des sociétés</a></li>
-                                    <li><a href="" key="t-create-new">Créer un nouveau</a></li>
+                                    <li><a href="{{route('listeFormation')}}" key="t-p-list">Liste des Formations</a></li>
+                                    <li><a href="{{route('formation.create')}}" key="t-create-new">créer une nouvelle formation</a></li>
                                 </ul>
                             </li>
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Clients</span>
+                                    <span key="t-crypto">Département</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="" key="t-p-list">Liste des clients</a></li>
-                                    <li><a href="" key="t-create-new">Créer un nouveau</a></li>
+                                    <li><a href="{{route('listedepartement')}}" key="t-p-list">Liste des départements</a></li>
+                                    <li><a href="{{route('departement.create')}}" key="t-create-new">Créer un nouveau</a></li>
                                 </ul>
                             </li>
 

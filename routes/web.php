@@ -7,6 +7,7 @@ use App\Http\Controllers\SpecialiteController;
 use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\DepartementController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,8 @@ Route::get('/', function () {
 
 Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
 
+//enseignant
+
 Route::get('/enseignantstore', [EnseignantController::class, 'store'])->name('enseignant.store');
 Route::post('/enseignantstore', [EnseignantController::class, 'store'])->name('enseignant.store');
 Route::post('/enseignantcreate', [EnseignantController::class, 'create'])->name('enseignant.create');
@@ -37,6 +40,7 @@ Route::get('/enseignant/{id}', [EnseignantController::class, 'show'])->name('aff
 Route::put('/enseignant/{id}', [EnseignantController::class, 'updateEnseignant'])->name('Enseignant.update');
 Route::delete('/enseignant/{id?}', [EnseignantController::class, 'deleteEnseignant'])->name('Enseignant.destroy');
 
+//spécialité
 
 Route::get('/specialitestore', [SpecialiteController::class, 'store'])->name('specialite.store');
 Route::post('/specialitestore', [SpecialiteController::class, 'store'])->name('specialite.store');
@@ -52,13 +56,15 @@ Route::delete('/specialite/{id?}', [SpecialiteController::class, 'deleteSpeciali
 
 
 
-
+//cclasse
 
 Route::get('/classestore', [ClasseController::class, 'store'])->name('classe.store');
 Route::post('/classestore', [ClasseController::class, 'store'])->name('classe.store');
 Route::post('/classecreate', [ClasseController::class, 'create'])->name('classe.create');
 Route::get('/classecreate', [ClasseController::class, 'create'])->name('classe.create');
 Route::get('/listeclasse', [ClasseController::class, 'getClasse'])->name('classe.liste');
+
+//formation
 
 Route::get('/formationstore', [FormationController::class, 'store'])->name('formation.store');
 Route::post('/formationstore', [FormationController::class, 'store'])->name('formation.store');
@@ -73,6 +79,7 @@ Route::get('/formation/{id}', [FormationController::class, 'show'])->name('affic
 Route::put('/formation/{id}', [FormationController::class, 'updateFormation'])->name('formation.update');
 Route::delete('/formation/{id?}', [FormationController::class, 'deleteFormation'])->name('formation.destroy');
 
+//departement
 Route::get('/departementstore', [DepartementController::class, 'store'])->name('departement.store');
 Route::post('/departementstore', [DepartementController::class, 'store'])->name('departement.store');
 Route::post('/departementcreate', [DepartementController::class, 'create'])->name('departement.create');
@@ -80,9 +87,24 @@ Route::get('/departementcreate', [DepartementController::class, 'create'])->name
 Route::get('/listedepartement', [DepartementController::class, 'getDepartement'])->name('listedepartement');
 
 
-Route::get('/modifierDepartement/{id}', [DepartementController::class, 'updateFormation'])->name('modifierDepartement');
-Route::get('/supprimerDepartement/{id}', [DepartementController::class, 'deleteFormation'])->name('supprimerDepartement');
+Route::get('/modifierDepartement/{id}', [DepartementController::class, 'updateDepartemenet'])->name('modifierDepartement');
+Route::get('/supprimerDepartement/{id}', [DepartementController::class, 'deleteDepartement'])->name('supprimerDepartement');
 Route::get('/departement/{id}', [DepartementController::class, 'show'])->name('afficherDepartement');
 Route::put('/departement/{id}', [DepartementController::class, 'updateDepartement'])->name('departement.update');
 Route::delete('/departement/{id?}', [DepartementController::class, 'deleteDepartement'])->name('departement.destroy');
+
+//contact
+
+Route::get('/contactstore', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/contactstore', [ContactController::class, 'store'])->name('contact.store');
+Route::post('/contactcreate', [ContactController::class, 'create'])->name('contact.create');
+Route::get('/contactcreate', [ContactController::class, 'create'])->name('contact.create');
+Route::get('/listecontact', [ContactController::class, 'getContact'])->name('listecontact');
+
+
+Route::get('/modifiercontact/{id}', [ContactController::class, 'updateContact'])->name('modifierContact');
+Route::get('/supprimerContact/{id}', [ContactController::class, 'deleteContact'])->name('supprimerContact');
+Route::get('/contact/{id}', [ContactController::class, 'show'])->name('afficherContact');
+Route::put('/contact/{id}', [ContactController::class, 'updateContact'])->name('Contact.update');
+Route::delete('/contact/{id?}', [ContactController::class, 'deleteContact'])->name('contact.destroy');
 

@@ -26,7 +26,7 @@
                             <div class="row mb-4">
                                 <label for="acronyme" class="col-form-label col-lg-2">acronyme</label>
                                 <div class="col-lg-10">
-                                    <input id="acronyme" name=acronyme" type="text" class="form-control" placeholder="Entrez le acronyme...">
+                                    <input id="acronyme" name="acronyme" type="text" class="form-control" placeholder="Entrez l'acronyme...">
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -43,35 +43,20 @@
 
                             </div>
                             <div class="row mb-4">
-                                <label for="code" class="col-form-label col-lg-2">code</label>
+                                <label for="code_tel" class="col-form-label col-lg-2">code_tel</label>
                                 <div class="col-lg-10">
-                                    <input id="code" name="code" type="text" class="form-control" placeholder="Entrez le code">
+                                    <input id="code_tel" name="code_tel" type="text" class="form-control" placeholder="Entrez le code tel ">
                                 </div>
                             </div>
 
-                            <div class="row mb-4">
-                                <label for="tel" class="col-form-label col-lg-2">tel</label>
-                                <div class="col-lg-10">
-                                    <input id="tel" name="tel" type="text" class="form-control" placeholder="Entrez le numero du telephone">
-                                </div>
-                            </div>
+                            
 
-                            <div class="row mb-4">
-                                <label for="id_filiere" class="col-form-label col-lg-2">Choisir les enseignants </label>
-                                <div class="col-lg-10">
-                                    <select id="id_enseignante" name="id_enseignant" class="form-control" multiple>
-                                        <option value="0">Sélectionnez les enseignants </option>
-                                        @foreach($data as $enseignant)
-                                            <option value="{{ $enseignant->id }}">{{$enseignant->nom }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
+                           
 
 
                             <button class="btn btn-primary fw-medium py-3 px-4 mt-3" id="formSubmit" type="submit" style="width:100%">
                         <span class="spinner-border spinner-border-sm d-none me-2" aria-hidden="true"></span>
-                        Créer une spécialité
+                        Créer un département 
                     </button>
                             
                         </form>

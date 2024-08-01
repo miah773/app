@@ -360,10 +360,14 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="" class="waves-effect">
+                                <a href="javascript: void(0);"" class="has-arrow waves-effect">
                                     <i class="bx bxs-user-detail"></i>
-                                    <span key="t-chat">Contact</span>
+                                    <span key="t-crypto">Contact</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('listecontact')}}" key="t-p-list">Liste des contact</a></li>
+                                    <li><a href="{{route('contact.create')}}" key="t-create-new">Créer un nouveau</a></li>
+                                </ul>
                             </li>
                         
 

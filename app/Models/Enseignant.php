@@ -14,7 +14,7 @@ class Enseignant extends Model
     protected $table = 'enseignant';
 
     // Les champs pouvant être remplis massivement
-    protected $fillable = ['nom', 'prenom', 'email', 'poste', 'id_specialite', 'tel', 'CIN', 'date_rec'];
+    protected $fillable = ['nom', 'prenom', 'email', 'poste', 'id_specialite', 'tel', 'CIN', 'date_rec','id_departement'];
     
     
 }

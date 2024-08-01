@@ -1,24 +1,29 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Enseignant;
+
 use App\Models\Departement;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+
 class DepartementController extends Controller
 {
     //
     
+   
     public function create(){
-        $enseignant = Enseignant::all();
-        return view("admin.Departement.departement-create", ['data' => $enseignant]);
+        return view("admin.Departement.departement-create");
     }
+
 
 
     public function store(Request $request)
     {
         $request->validate([
             'nom' => 'required|string|max:255',
+            'acronyme' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+            'chef_departement' => 'required|string|max:255',
+            'code_tel' => 'required|string|max:255',
         ]);
 
         $departement = new Departement();
@@ -26,42 +31,45 @@ class DepartementController extends Controller
         $departement->acronyme = $request->input('acronyme');
         $departement->description = $request->input('description');
         $departement->chef_departement = $request->input('chef_departement');
-        $departement->code = $request->input('code');
-        $departement->tel = $request->input('tel');
-        $departement->id_enseignant = $request->input('id_enseignant');
+        $departement->code_tel = $request->input('code_tel');
+       
         $departement->save();
 
-        return redirect()->route('listedepartement')->with('success', 'département créée avec succès');
+        return redirect()->route('departement.create')->with('success', 'département créée avec succès');
     }
 
 
 
     public function getDepartement(){
-        $departement = DB::table('departement')
-        ->join('enseignant', 'departement.id_enseignant', '=', 'enseignant.id')
-        ->select('departement.id', 'departement.nom as departement_nom', 'departement.acronyme as departement_acronyme', 'departement.description as departement_description', 'departement.chef_departement as departement_chef_departement', 'departement.code as departement_code','departement.tel as departement_tel', 'enseignant.id as enseignant_id')
-        ->get();    
-        return view('admin/Departement/listeDepartement',['data'=>$departement]);
+        $departement = Departement::all();
+        return view('admin.Departement.listeDepartement',['data'=>$departement]);
     }
 
 
     public function deleteDepartement($id){
         $departement = Departement::find($id);
         $departement->delete();
-         return redirect()->route('listedepartemen')->with('message', 'département a ete bien supprimé');
+         return redirect()->route('listedepartement')->with('message', 'département a ete bien supprimé');
     }
 
     public function updateDepartement(Request $request){
+        $request->validate([
+            'nom' => 'required|string|max:255',
+            'acronyme' => 'required|string|max:255', // Vérifie la présence de l'acronyme
+            'description' => 'required|string|max:500',
+            'chef_departement' => 'required|string|max:255',
+            'code_tel' => 'required|string|max:255',
+        ]);
         $departement = Departement::find($request->id);
-        $enseignant=Enseignant::find($request->id);
+        if (!$departement) {
+            return redirect()->route('listedepartement')->with('error', 'Département introuvable');
+        }
         $departement->nom  = $request->nom;
         $departement->acronyme  = $request->acronyme;
         $departement->description  = $request->description;
         $departement->chef_departement  = $request->chef_departement;
-        $departement->code  = $request->code;
-        $departement->tel  = $request->tel;
-        $departement->id_enseignant=$enseignant;
-
+        $departement->code_tel = $request->code_tel;
+       
         $departement->save();
         return redirect()->route('listedepartement')->with('message', 'département a ete bien modifié');
     }
@@ -69,19 +77,13 @@ class DepartementController extends Controller
     
 public function show($id)
 {
-    $departement = DB::table('departement')
-    ->join('enseignant', 'departement.id_enseignant', '=', 'enseignant.id')
-    ->select('departement.*','departement.id', 'departement.nom as departement_nom', 'departement.acronyme as departement_acronyme', 'departement.description as departement_description', 'departement.chef_departement as departement_chef_departement', 'departement.code as departement_code','departement.tel as departement_tel', 'enseignant.id as enseignant_id')
-    ->where('departement.id', $id)
-    ->get();
-    $enseignant = DB::table('enseignant')->get();
-   
-
-    $data = [ 'departement' => $departement, 'enseignant' => $enseignant ]; 
+    $departement = Departement::find($id);
+    $data = [
+        'departement' => $departement,
+    ];
 
     // Renvoie la réponse JSON avec les deux jeux de données
     return response()->json($data);
+
 }
-
-
 }

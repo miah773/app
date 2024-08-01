@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0 font-size-18">Liste des Spécialités</h4>
+                                    <h4 class="mb-sm-0 font-size-18">Liste de Spécialités</h4>
 
                                  
                                 </div>
@@ -25,13 +25,13 @@
                                 <div class="card">
                                     <div class="card-body">
         
-                                        <h4 class="card-title">Vous pouvez supprimer ou modifier des informations concernant les spécialités </h4>
+                                        <h4 class="card-title">Vous pouvez supprimer ou modifier des informations concernant les spécialités des plats</h4>
                                        <br />
                                         <table id="datatable" class="table table-bordered dt-responsive  nowrap w-100">
                                             <thead>
                                             <tr>
                                                 <th>Nom</th>
-                                                <th>Action</th>
+                                    
                    
                                             </tr>
                                             </thead>

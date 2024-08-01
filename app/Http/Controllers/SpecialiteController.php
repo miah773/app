@@ -23,7 +23,7 @@ class SpecialiteController extends Controller
 
         $specialite->save();
 
-        return redirect()->route('listespecialite')->with('success', 'Spécialité créée avec succès');
+        return redirect()->route('specialite.liste')->with('success', 'Spécialité créée avec succès');
     }
 
 

@@ -14,7 +14,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title mb-4">Créer une nouvelle filiére</h4>
+                        <h4 class="card-title mb-4">Créer une nouvelle spécialité</h4>
                         <form id="formDropzone" method="POST" action="{{route ('specialite.store')}}" enctype="multipart/form-data">
                         @csrf
                             <div class="row mb-4">

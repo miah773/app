@@ -8,7 +8,8 @@ use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\IndexController;
+use App\Http\Controllers\EtudiantController;
+
 
 use App\Http\Controllers\loginController;
 /*
@@ -26,15 +27,57 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/index2', function () {
+    return view('index2');
+})->name('index2');
+
+Route::get('/tour', function () {
+    return view('tour');
+})->name('tour');
+Route::get('/testimonial', function () {
+    return view('testimonial');
+})->name('testimonial');
+
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
+
+Route::get('/packages', function () {
+    return view('packages');
+})->name('packages');
+
+Route::get('/guides', function () {
+    return view('guides');
+})->name('guides');
+
+Route::get('/destination', function () {
+    return view('destination');
+})->name('destination');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/gallery', function () {
+    return view('gallery');
+})->name('gallery');
+
+Route::get('/booking', function () {
+    return view('booking');
+})->name('booking');
+
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/404', function () {
+    return view('404');
+})->name('404');
 
 Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/dash', [IndexController::class, 'dash'])->name('admin.dash');
-
-Route::get('/admin',[loginController::class,'login']);
-Route::post('/login',[loginController::class,'authLogin']);
-
-
-
 
 //enseignant
 
@@ -119,62 +162,13 @@ Route::put('/contact/{id}', [ContactController::class, 'updateContact'])->name('
 Route::delete('/contact/{id?}', [ContactController::class, 'deleteContact'])->name('contact.destroy');
 
 
-<?php
-
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\EnseignantController;
-use App\Http\Controllers\SpecialiteController;
-use App\Http\Controllers\ClasseController;
-use App\Http\Controllers\EtudiantController;
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
-
-Route::get('/enseignantstore', [EnseignantController::class, 'store'])->name('enseignant.store');
-Route::post('/enseignantstore', [EnseignantController::class, 'create'])->name('enseignant.store');
-Route::post('/enseignantcreate', [EnseignantController::class, 'create'])->name('enseignant.create');
-
-
-
-Route::get('/specialitestore', [SpecialiteController::class, 'store'])->name('specialite.store');
-Route::post('/specialitestore', [SpecialiteController::class, 'store'])->name('specialite.store');
-Route::post('/specialitecreate', [SpecialiteController::class, 'create'])->name('specialite.create');
-Route::get('/specialitecreate', [SpecialiteController::class, 'create'])->name('specialite.create');
-
-Route::get('/listespecialite', [SpecialiteController::class, 'getSpecialite'])->name('specialite.liste');
-Route::get('/modifierSpecialite/{id}', [SpecialiteController::class, 'updateSpecialite'])->name('modifierSpecialite');
-Route::get('/supprimerSpecialite/{id}', [SpecialiteController::class, 'deleteSpecialite'])->name('supprimerSpecialite');
-Route::get('/specialite/{id}', [SpecialiteController::class, 'show'])->name('afficherSpecialite');
-Route::put('/specialite/{id}', [SpecialiteController::class, 'updateSpecialite'])->name('specialite.update');
-Route::delete('/specialite/{id?}', [SpecialiteController::class, 'deleteSpecialite'])->name('specialite.destroy');
 
 
 
 
 
-Route::get('/classestore', [ClasseController::class, 'store'])->name('classe.store');
-Route::post('/classestore', [ClasseController::class, 'store'])->name('classe.store');
-Route::post('/classecreate', [ClasseController::class, 'create'])->name('classe.create');
-Route::get('/classecreate', [ClasseController::class, 'create'])->name('classe.create');
-Route::get('/listeclasse', [ClasseController::class, 'getClasse'])->name('classe.liste');
 
+//etudiant
 
 Route::get('/etudiantstore', [EtudiantController::class, 'store'])->name('etudiant.store');
 Route::post('/etudiantstore', [EtudiantController::class, 'store'])->name('etudiant.store');

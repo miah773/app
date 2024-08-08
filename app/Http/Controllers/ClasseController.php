@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Filiere;
 use App\Models\Classe;
-use DB;
+use Illuminate\Support\Facades\DB;
 class ClasseController extends Controller
 {
     //

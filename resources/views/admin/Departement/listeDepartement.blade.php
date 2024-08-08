@@ -34,10 +34,10 @@
                             <tbody>
                                 @foreach($data as $item)
                                 <tr>
-                                    <td>{{$item->nom}}</td>
+                                    <td>{{$item->nom_dep}}</td>
                                     <td>{{$item->acronyme}}</td>
                                     <td>{{$item->description}}</td>
-                                    <td>{{$item->chef_departement}}</td>
+                                    <td>{{$item->chef_dep}}</td>
                                     <td>{{$item->code_tel}}</td>
                                     <td>
                                         <button class="btn btn-warning btn-sm" 
@@ -79,7 +79,7 @@
                         @method('PUT')
 
                         <div class="d-flex align-items-center mb-3">
-                            <label for="editNom" class="form-label" style="width: 20%;">Nom</label>
+                            <label for="editNom" class="form-label" style="width: 30%;">Nom</label>
                             <input type="text" class="form-control" id="editNom" name="nom" required>
                         </div>
                         <div class="row mb-4">
@@ -130,10 +130,10 @@
                 .then(response => response.json())
                 .then(data => {
                     var sp = data.departement;
-                    document.getElementById('editNom').value = sp.nom;
+                    document.getElementById('editNom').value = sp.nom_dep;
                     document.getElementById('acronyme').value = sp.acronyme;
                     document.getElementById('description').value = sp.description;
-                    document.getElementById('chef_departement').value = sp.chef_departement;
+                    document.getElementById('chef_departement').value = sp.chef_dep;
                     document.getElementById('code_tel').value = sp.code_tel;
                 })
                 .catch(error => {

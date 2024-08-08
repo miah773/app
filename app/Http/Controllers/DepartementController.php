@@ -87,3 +87,104 @@ public function show($id)
 
 }
 }
+
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Departement;
+use Illuminate\Http\Request;
+
+class DepartementController extends Controller
+{
+    //
+    
+   
+    public function create(){
+        return view("admin.Departement.departement-create");
+    }
+
+
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'nom_dep' => 'required|string|max:255',
+            'acronyme' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
+            'chef_dep' => 'required|string|max:255',
+            'code_tel' => 'required|string|max:255',
+        ]);
+
+        $departement = new Departement();
+        $departement->nom_dep = $request->input('nom_dep');
+        $departement->acronyme = $request->input('acronyme');
+        $departement->description = $request->input('description');
+        $departement->chef_dep = $request->input('chef_dep');
+        $departement->code_tel = $request->input('code_tel');
+       
+        $departement->save();
+
+        return redirect()->route('departement.create')->with('success', 'département créée avec succès');
+    }
+
+
+
+    public function getDepartement(){
+        $departement = Departement::all();
+        return view('admin.Departement.listeDepartement',['data'=>$departement]);
+    }
+
+
+    public function deleteDepartement($id) {
+        // Find the department by ID
+        $departement = Departement::find($id);
+    
+        // Check if the department exists
+        if ($departement) {
+            // Delete the department
+            $departement->delete();
+            // Redirect with a success message
+            return redirect()->route('listedepartement')->with('message', 'Le département a été bien supprimé');
+        } else {
+            // Redirect with an error message if the department was not found
+            return redirect()->route('listedepartement')->with('error', 'Département introuvable');
+        }
+    }
+    
+
+    public function updateDepartement(Request $request){
+        $request->validate([
+            'nom_dep' => 'required|string|max:255',
+            'acronyme' => 'required|string|max:255', // Vérifie la présence de l'acronyme
+            'description' => 'required|string|max:500',
+            'chef_dep' => 'required|string|max:255',
+            'code_tel' => 'required|string|max:255',
+        ]);
+        $departement = Departement::find($request->id);
+        if (!$departement) {
+            return redirect()->route('listedepartement')->with('error', 'Département introuvable');
+        }
+        $departement->nom_dep  = $request->nom;
+        $departement->acronyme  = $request->acronyme;
+        $departement->description  = $request->description;
+        $departement->chef_dep  = $request->chef_departement;
+        $departement->code_tel = $request->code_tel;
+       
+        $departement->save();
+        return redirect()->route('listedepartement')->with('message', 'département a ete bien modifié');
+    }
+
+    
+public function show($id)
+{
+    $departement = Departement::find($id);
+    $data = [
+        'departement' => $departement,
+    ];
+
+    // Renvoie la réponse JSON avec les deux jeux de données
+    return response()->json($data);
+
+}
+}

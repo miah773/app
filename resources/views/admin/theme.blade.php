@@ -296,16 +296,6 @@
                           
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Spécialité</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{route('specialite.liste')}}" key="t-p-list">Liste des spécialité</a></li>
-                                    <li><a href="{{route('specialite.create')}}" key="t-create-new">Créer un nouveau</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-briefcase-alt-2"></i>
                                     <span key="t-projects">Classe</span>
                                 </a>
@@ -317,34 +307,56 @@
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-task"></i>
+                                    <span key="t-tasks">Enseignant</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('listeenseignant')}}" key="t-p-list">Liste des Enseignant</a></li>
+                                <li><a href="{{route('enseignant.create')}}" key="t-create-new">Créer un nouveau enseignant</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Etudiants</span>
+                                    <span key="t-crypto">Formation</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('listeFormation')}}" key="t-p-list">Liste des Formations</a></li>
+                                    <li><a href="{{route('formation.create')}}" key="t-create-new">créer une nouvelle formation</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-bitcoin"></i>
+                                    <span key="t-crypto">Département</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('listedepartement')}}" key="t-p-list">Liste des départements</a></li>
+                                    <li><a href="{{route('departement.create')}}" key="t-create-new">Créer un nouveau</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-bitcoin"></i>
+                                    <span key="t-crypto">Filières</s></span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('listespecialite')}}" key="t-p-list">Liste des Filières</a></li>
+                                    <li><a href="{{route('specialite.create')}}" key="t-create-new">Créer une nouvelle filière</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-bitcoin"></i>
+                                    <span key="t-crypto">Etudiants</s></span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="{{route('etudiant.liste')}}" key="t-p-list">Liste des étudiants</a></li>
                                     <li><a href="{{route('etudiant.create')}}" key="t-create-new">Créer un nouveau étudiant</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Sociétés</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="" key="t-p-list">Liste des sociétés</a></li>
-                                    <li><a href="" key="t-create-new">Créer un nouveau</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Clients</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="" key="t-p-list">Liste des clients</a></li>
-                                    <li><a href="" key="t-create-new">Créer un nouveau</a></li>
                                 </ul>
                             </li>
 
@@ -359,10 +371,14 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="" class="waves-effect">
+                                <a href="javascript: void(0);"" class="has-arrow waves-effect">
                                     <i class="bx bxs-user-detail"></i>
-                                    <span key="t-chat">Contact</span>
+                                    <span key="t-crypto">Contact</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('listecontact')}}" key="t-p-list">Liste des contact</a></li>
+                                    <li><a href="{{route('contact.create')}}" key="t-create-new">Créer un nouveau</a></li>
+                                </ul>
                             </li>
                         
 

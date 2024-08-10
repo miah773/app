@@ -8,6 +8,9 @@ use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\IndexController;
+
+use App\Http\Controllers\loginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +28,13 @@ Route::get('/', function () {
 
 
 Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/dash', [IndexController::class, 'dash'])->name('admin.dash');
+
+Route::get('/admin',[loginController::class,'login']);
+Route::post('/login',[loginController::class,'authLogin']);
+
+
+
 
 //enseignant
 

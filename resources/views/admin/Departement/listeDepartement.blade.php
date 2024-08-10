@@ -79,7 +79,7 @@
                         @method('PUT')
 
                         <div class="d-flex align-items-center mb-3">
-                            <label for="editNom" class="form-label" style="width: 30%;">Nom</label>
+                            <label for="editNom" class="form-label" style="width: 20%;">Nom</label>
                             <input type="text" class="form-control" id="editNom" name="nom" required>
                         </div>
                         <div class="row mb-4">

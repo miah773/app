@@ -49,7 +49,6 @@
                                                     Modifier
                                                 </button>
 
-
                                                 <form action="{{ route('specialite.destroy', ['id' => $item->id]) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
@@ -73,7 +72,7 @@
                     </div> <!-- container-fluid -->
 
                 <!-- End Page-content -->
-
+<!-- End Page-content -->
 
 <!-- Modal Modification -->
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">

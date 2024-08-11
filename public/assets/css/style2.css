@@ -92,6 +92,7 @@
     color: var(--bs-secondary) !important;
 }
 
+
 /*** Section Title Start ***/
 .section-title {
     position: relative;
@@ -183,12 +184,14 @@
 }
 
 .navbar-light .navbar-brand img {
-    max-height: 60px;
-    transition: .5s;
+    width: 150px;  /* Adjust this value to set the desired width */
+    height: auto;  /* Maintains the aspect ratio */
+    max-width: 100%;
 }
 
+
 .sticky-top.navbar-light .navbar-brand img {
-    max-height: 45px;
+    max-height: 100px;
 }
 
 .navbar .dropdown-toggle::after {
@@ -394,7 +397,7 @@
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
-    background: linear-gradient(rgba(19, 53, 123, 0.5), rgba(19, 53, 123, 0.5)), url(../img/breadcrumb-bg.jpg);
+    background: linear-gradient(rgba(19, 53, 123, 0.5), rgba(19, 53, 123, 0.5)), url(../img/presentation.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -519,7 +522,6 @@
     transform: scale(1.2);
 }
 /*** Destination End ***/
-
 
 /*** Packages Start ***/
 .packages .packages-item .packages-img {
@@ -1086,6 +1088,12 @@
 .testimonial .testimonial-carousel {
     position: relative;
 }
+.separator-line {
+    border: none;
+    border-top: 2px solid gray;  /* Adjust the color and thickness */
+    width: 20%;  /* Adjust the width */
+    margin: 20px auto;  /* Adjust the spacing */
+}
 
 .testimonial .testimonial-carousel .testimonial-item .testimonial-img {
     position: relative;
@@ -1245,3 +1253,92 @@
     background: var(--bs-dark) !important;
 }
 /*** copyright end ***/
+
+
+
+
+/* Bloc Menu Left */
+.menuBlocLeft{
+    width: 100%;
+    /* border-right: 1px solid #eee; */
+}
+
+.menuBlocLeft .l1-link{
+    /* box-shadow: inset -4px -2px 5px 0px #eee; */
+    /* margin-bottom:  20px; */
+    border-right: 1px solid #dedede;
+    padding-bottom: 21px;
+}
+
+.menuBlocLeft ul , .menuBlocLeft li{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.menuBlocLeft .titleBlocMenu{
+    font-size: 22px;
+    color: #13357b;
+    padding: 20px;
+    border-bottom: 1px dashed #dedede;
+    display: block;
+    text-transform:  uppercase;
+}
+
+.menuBlocLeft .l2{
+
+}
+
+.menuBlocLeft .l2-link{
+    border-bottom: 1px dashed #dedede;
+}
+
+.menuBlocLeft .l2 a{
+    padding:10px 20px;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #eeeeee96;
+}
+.menuBlocLeft .l2-link>a:first-child{
+    border: none;
+}
+.menuBlocLeft .l2 a i{
+    margin-right: 10px;
+}
+
+.menuBlocLeft .l2 a:hover{
+    background: #f6f6f666;
+    padding: 10px 25px ;
+}
+
+.menuBlocLeft .l3 a{
+    padding: 10px 40px;
+    transition: all 0.5s ease;
+}
+
+.menuBlocLeft .l3 a:hover{
+    padding: 10px 45px ;
+}
+
+.menuBlocLeft .l4 a{
+    padding:10px 60px;
+    transition: all 0.5s ease;
+}
+
+.menuBlocLeft .l4 a:hover{
+    padding: 10px 55px ;
+}
+
+.menuBlocLeft .l3-link i{
+    font-size: 5px;
+}
+.menuBlocLeft .l2,.menuBlocLeft .l3,.menuBlocLeft .l4{
+    width:unset !important;
+}
+.left_content {
+    width: 300px;
+    position: relative;
+   
+
+}

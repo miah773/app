@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
         <meta charset="utf-8">
-        <title>Contactez_nous</title>
+        <title>Réglementation</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -28,7 +27,6 @@
         <!-- Template Stylesheet -->
         <link href="{{ asset('assets/css/style2.css')}}" rel="stylesheet">
     </head>
-
     <body>
 
         <!-- Spinner Start -->
@@ -48,12 +46,13 @@
                         <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
                         <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
                         <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                        <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                      
                     </div>
                 </div>
                 <div class="col-lg-4 text-center text-lg-end">
                     <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a href="#"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Espace Extranet</small></a>
+
+                        <a href="#"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Espace Extranet</small></a>
                       
                         </div>
                     </div>
@@ -80,7 +79,7 @@
                             <div class="dropdown-menu m-0">
                             <a href="{{ route('about') }}" class="dropdown-item ">Présentation de l'institut</a>
                                 <a href="{{ route('motdedirecteur') }}" class="dropdown-item ">Mot de directeur</a>
-                                <a href="{{ route('reglementation') }}" class="dropdown-item ">Réglementation</a>
+                                <a href="{{ route('reglementation') }}" class="dropdown-item active">Réglementation</a>
                                 <a href="{{ route('organigramme') }}" class="dropdown-item">Organigramme</a>
                                 <a href="{{ route('infrastructure') }}" class="dropdown-item">Infrastructures</a>
                                 <a href="{{ route('statistiques') }}" class="dropdown-item">Statistiques</a>
@@ -149,104 +148,176 @@
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Contact</h1>
+                <h3 class="text-white display-3 mb-4">Réglementation</h1>
                 <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item "><a href="{{ route('index2') }}">Retour à l'acceuil</a></li>
+                    <li class="breadcrumb-item "><a href="{{ route('index2') }}">Retour à l'acceuil</a></li>
+                    
                 </ol>    
             </div>
         </div>
         <!-- Header End -->
 
-        <!-- Contact Start -->
-        <div class="container-fluid contact bg-light py-5">
+        <!-- About Start -->
+        <div class="container-fluid about py-5">
             <div class="container py-5">
-                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-                    <h5 class="section-title px-3">Contact </h5>
-                    
-                </div>
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-4">
-                        <div class="bg-white rounded p-4">
-                            <div class="text-center mb-4">
-                                <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
-                                <h4 class="text-primary"><Address>Adresse</Address></h4>
-                                <p class="mb-0"> Av. Omar Ibn El Khattab,  <br> Zrig - 6072 Gabès  - 6072 Tunisie</p>
+                    <div class="col-lg-5">
+                    <div class="left_content">
+                <!-- Bloc Menu Left Active -->
+                    <link rel="stylesheet" href="stylesheets/menu_bloc_left.css">
+
+    <div class="site-block t20 menuBlocLeft">
+        <ul>
+            
+                <!-- Level 1 -->
+                <li class="l1-link">
+
+                    <a href="javascript:void(0)" title="Institut" target="_self" class="titleBlocMenu" menu_id="303">
+                        Institut                    </a>
+
+                    <!-- Level 2 -->
+                                            <ul class="l2">
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="{{ route('about') }}" title="Mot de bienvenue " target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i>  Présentation                                     </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="{{ route('motdedirecteur') }}" title="Présentation" target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> Mot de directeur                                   </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="{{ route('reglementation') }}" title="Historique et Mission " target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> Réglementation                                     </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="{{ route('organigramme') }}" title="Administration " target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> Organigramme                                     </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="{{ route('infrastructure') }}" title="Conseil scientifique" target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> Infrastructures                                    </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="{{ route('statistiques') }}" title="Enseignants" target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> Statistiques                                    </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="{{ route('conseils') }}" title="Organigramme" target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> Conseil scientifique                                   </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="fra/s1303/pages/382/Statistiques" title="Statistiques" target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> Enseignants                                    </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="fra/s1303/pages/396/Lauréats" title="Lauréats" target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> Galerie des photos                                    </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                                <li class="l2-link">
+
+                                    <a href="fra/s1303/galerie/" title="Galerie de photos" target="_self" class="sf-with-ul">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i> Plan d'accés                                    </a>
+
+                                    <!-- Level 3 -->
+                                                                        <!-- /Level 3 -->
+                                </li>
+
+                            
+                                
+                               
+
+                                                    </ul>
+                                        <!-- /Level 2 -->
+
+                </li>
+                <!-- /Level 1 -->
+
+                    </ul>
+    </div>
                             </div>
-                            <div class="text-center mb-4">
-                                <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
-                                <h4 class="text-primary">Téléphone/Fix</h4>
-                                <p class="mb-0"> 75 399 939</p>
-                                <p class="mb-0">75 399 925</p>
-                            </div>
-                           
-                            <div class="text-center">
-                                <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
-                                <h4 class="text-primary">Email</h4>
-                                <p class="mb-0">info@example.com</p>
-                                <p class="mb-0">info@example.com</p>
-                            </div>
-                        </div>
                     </div>
-                    <div class="col-lg-8">
-                        <h3 class="mb-2">Envoyez un message</h3>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="name" placeholder="Your Name">
-                                        <label for="name">Nom & Prénom</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control border-0" id="email" placeholder="Your Email">
-                                        <label for="email">Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
-                                        <label for="subject">Ville</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
-                                        <label for="subject">Pays</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
-                                        <label for="subject">Téléphone</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control border-0" id="subject" placeholder="Subject">
-                                        <label for="subject">Sujet</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 160px"></textarea>
-                                        <label for="message">Message</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Envoyer</button>
-                                </div>
-                            </div>
-                        </form>
+                    <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url({{asset('assets/img/about-img.jpg')}});">
+                        <h5 class="section-about-title pe-3">Réglementation </h5>
+                        <p class="mb-4">En cours de construction...</p>
+
+                        
+                       
+                      
                     </div>
-                   
                 </div>
             </div>
         </div>
-        <!-- Contact End -->
+        <!-- About End -->
 
-       <!-- maps Start -->
-       <div class="col-12">
+        
+
+        <!-- maps Start -->
+        <div class="col-12">
                         <div class="rounded">
                             <iframe class="rounded w-100" 
                             style="height: 450px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.535931854149!2d10.102706875308566!3d33.850076573233686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12556e4037f61087%3A0xf1f62cd467db84da!2sInstitut%20Pr%C3%A9paratoire%20aux%20Etudes%20d&#39;Ing%C3%A9nieurs%20de%20Gab%C3%A9s!5e0!3m2!1sfr!2stn!4v1721938862119!5m2!1sfr!2stn" 
@@ -339,7 +410,7 @@
                 </div>
             </div>
         </div>
-
+        <!-- Copyright End -->
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
 

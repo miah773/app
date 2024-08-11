@@ -31,12 +31,12 @@ Route::get('/index2', function () {
     return view('index2');
 })->name('index2');
 
-Route::get('/tour', function () {
-    return view('tour');
-})->name('tour');
-Route::get('/testimonial', function () {
-    return view('testimonial');
-})->name('testimonial');
+Route::get('/reglementation', function () {
+    return view('reglementation');
+})->name('reglementation');
+Route::get('/conseils', function () {
+    return view('conseils');
+})->name('conseils');
 
 Route::get('/services', function () {
     return view('services');
@@ -46,25 +46,25 @@ Route::get('/packages', function () {
     return view('packages');
 })->name('packages');
 
-Route::get('/guides', function () {
-    return view('guides');
-})->name('guides');
+Route::get('/statistiques', function () {
+    return view('statistiques');
+})->name('statistiques');
 
-Route::get('/destination', function () {
-    return view('destination');
-})->name('destination');
+Route::get('/motdedirecteur', function () {
+    return view('motdedirecteur');
+})->name('motdedirecteur');
 
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/gallery', function () {
-    return view('gallery');
-})->name('gallery');
+Route::get('/infrastructure', function () {
+    return view('infrastructure');
+})->name('infrastructure');
 
-Route::get('/booking', function () {
-    return view('booking');
-})->name('booking');
+Route::get('/organigramme', function () {
+    return view('organigramme');
+})->name('organigramme');
 
 Route::get('/blog', function () {
     return view('blog');

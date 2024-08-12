@@ -8,9 +8,14 @@ use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\ContactController;
+<<<<<<< HEAD
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AuthentificationController;
 use App\Http\Controllers\EtudiantController;
+=======
+use App\Http\Controllers\EtudiantController;
+
+>>>>>>> main/main
 
 /*
 |--------------------------------------------------------------------------
@@ -30,12 +35,20 @@ Route::get('/index2', function () {
     return view('index2');
 })->name('index2');
 
+<<<<<<< HEAD
+=======
+Route::get('/index2', function () {
+    return view('index2');
+})->name('index2');
+
+>>>>>>> main/main
 Route::get('/reglementation', function () {
     return view('reglementation');
 })->name('reglementation');
 Route::get('/conseils', function () {
     return view('conseils');
 })->name('conseils');
+<<<<<<< HEAD
 
 Route::get('/services', function () {
     return view('services');
@@ -98,6 +111,49 @@ Route::controller(loginController::class)->group(function () {
 
 
 
+=======
+
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
+
+Route::get('/packages', function () {
+    return view('packages');
+})->name('packages');
+
+Route::get('/statistiques', function () {
+    return view('statistiques');
+})->name('statistiques');
+
+Route::get('/motdedirecteur', function () {
+    return view('motdedirecteur');
+})->name('motdedirecteur');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/infrastructure', function () {
+    return view('infrastructure');
+})->name('infrastructure');
+
+Route::get('/organigramme', function () {
+    return view('organigramme');
+})->name('organigramme');
+
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/404', function () {
+    return view('404');
+})->name('404');
+
+Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
+>>>>>>> main/main
 
 //enseignant
 
@@ -188,6 +244,16 @@ Route::get('/contact/{id}', [ContactController::class, 'show'])->name('afficherC
 Route::put('/contact/{id}', [ContactController::class, 'updateContact'])->name('Contact.update');
 Route::delete('/contact/{id?}', [ContactController::class, 'deleteContact'])->name('contact.destroy');
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+
+>>>>>>> main/main
 //etudiant
 
 Route::get('/etudiantstore', [EtudiantController::class, 'store'])->name('etudiant.store');
@@ -200,6 +266,9 @@ Route::get('/supprimerEtudiant/{id}', [EtudiantController::class, 'deleteEtudian
 Route::get('/etudiant/{id}', [EtudiantController::class, 'show'])->name('afficherEtudiant');
 Route::put('/etudiant/{id}', [EtudiantController::class, 'updateEtudiant'])->name('etudiant.update');
 Route::delete('/etudiant/{id?}', [EtudiantController::class, 'deleteEtudiant'])->name('etudiant.destroy');
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> main/main

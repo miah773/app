@@ -18,9 +18,9 @@
                         <form id="formDropzone" method="POST" action="{{route ('departement.store')}}" enctype="multipart/form-data">
                         @csrf
                             <div class="row mb-4">
-                                <label for="nom" class="col-form-label col-lg-2">Nom</label>
+                                <label for="nom_dep" class="col-form-label col-lg-2">Nom</label>
                                 <div class="col-lg-10">
-                                    <input id="nom" name="nom" type="text" class="form-control" placeholder="Entrez le nom...">
+                                    <input id="nom_dep" name="nom_dep" type="text" class="form-control" placeholder="Entrez le nom...">
                                 </div>
                             </div>
                             <div class="row mb-4">
@@ -36,9 +36,9 @@
                                 </div>
                             </div>
                             <div class="row mb-4">
-                                <label for="chef_departement" class="col-form-label col-lg-2">chef_departement</label>
+                                <label for="chef_dep" class="col-form-label col-lg-2">chef_departement</label>
                                 <div class="col-lg-10">
-                                    <input id="chef_departement" name="chef_departement" type="text" class="form-control" placeholder="Entrez le nom du chef_departement">
+                                    <input id="chef_dep" name="chef_dep" type="text" class="form-control" placeholder="Entrez le nom du chef_departement">
                                 </div>
 
                             </div>

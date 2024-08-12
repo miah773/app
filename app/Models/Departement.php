@@ -14,5 +14,7 @@ class Departement extends Model
     protected $table = 'departement';
 
     // Les champs pouvant être remplis massivement
-    protected $fillable = ['nom','acronyme','description', 'chef_departement', 'code_tel'];
+    protected $fillable = ['nom_dep','acronyme','description', 'chef_dep', 'code_tel'];
 }
+
+

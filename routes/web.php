@@ -10,6 +10,8 @@ use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\AuthentificationController;
+use App\Http\Controllers\EtudiantController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,7 +26,55 @@ use App\Http\Controllers\AuthentificationController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/index2', function () {
+    return view('index2');
+})->name('index2');
 
+Route::get('/reglementation', function () {
+    return view('reglementation');
+})->name('reglementation');
+Route::get('/conseils', function () {
+    return view('conseils');
+})->name('conseils');
+
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
+
+Route::get('/packages', function () {
+    return view('packages');
+})->name('packages');
+
+Route::get('/statistiques', function () {
+    return view('statistiques');
+})->name('statistiques');
+
+Route::get('/motdedirecteur', function () {
+    return view('motdedirecteur');
+})->name('motdedirecteur');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/infrastructure', function () {
+    return view('infrastructure');
+})->name('infrastructure');
+
+Route::get('/organigramme', function () {
+    return view('organigramme');
+})->name('organigramme');
+
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/404', function () {
+    return view('404');
+})->name('404');
 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/dash', [IndexController::class, 'dash'])->name('admin.dash');
@@ -138,7 +188,18 @@ Route::get('/contact/{id}', [ContactController::class, 'show'])->name('afficherC
 Route::put('/contact/{id}', [ContactController::class, 'updateContact'])->name('Contact.update');
 Route::delete('/contact/{id?}', [ContactController::class, 'deleteContact'])->name('contact.destroy');
 
+//etudiant
 
+Route::get('/etudiantstore', [EtudiantController::class, 'store'])->name('etudiant.store');
+Route::post('/etudiantstore', [EtudiantController::class, 'store'])->name('etudiant.store');
+Route::post('/etudiantcreate', [EtudiantController::class, 'create'])->name('etudiant.create');
+Route::get('/etudiantcreate', [EtudiantController::class, 'create'])->name('etudiant.create');
+Route::get('/listeetudiant', [EtudiantController::class, 'getEtudiant'])->name('etudiant.liste');
+Route::get('/modifierEtudiant/{id}', [EtudiantController::class, 'updateEtudiant'])->name('modifierEtudiant');
+Route::get('/supprimerEtudiant/{id}', [EtudiantController::class, 'deleteEtudiant'])->name('supprimerEtudiant');
+Route::get('/etudiant/{id}', [EtudiantController::class, 'show'])->name('afficherEtudiant');
+Route::put('/etudiant/{id}', [EtudiantController::class, 'updateEtudiant'])->name('etudiant.update');
+Route::delete('/etudiant/{id?}', [EtudiantController::class, 'deleteEtudiant'])->name('etudiant.destroy');
 
 
 

@@ -266,8 +266,8 @@
                                 <span key="t-tasks"> &Eacute;tudiant </span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                <li><a href=""key="t-p-list">Liste des &Eacute;tudiant </a></li>
-                                <li><a href="" key="t-create-new">Créer un nouveau étudiant</a></li>
+                                <li><a href="{{route('etudiant.liste')}}"key="t-p-list">Liste des &Eacute;tudiant </a></li>
+                                <li><a href="{{route('etudiant.create')}}" key="t-create-new">Créer un nouveau étudiant</a></li>
 
                                 </ul>
                             </li>

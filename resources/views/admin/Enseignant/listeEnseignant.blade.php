@@ -57,7 +57,7 @@
             Modifier
         </button>
 
-        <form action="{{ route('departement.destroy', ['id' => $item->id]) }}" method="POST" style="margin: 0;">
+        <form action="{{ route('Enseignant.destroy', ['id' => $item->id]) }}" method="POST" style="margin: 0;">
             @csrf
             @method('DELETE')
             <button type="submit" class="btn btn-danger btn-sm">

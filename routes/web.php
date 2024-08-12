@@ -9,8 +9,7 @@ use App\Http\Controllers\FormationController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndexController;
-
-use App\Http\Controllers\loginController;
+use App\Http\Controllers\AuthentificationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,11 +26,25 @@ Route::get('/', function () {
 });
 
 
-Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/dash', [IndexController::class, 'dash'])->name('admin.dash');
 
-Route::get('/admin',[loginController::class,'login']);
+Route::get('/login',[AuthentificationController::class,'login'])->name("login");
+Route::post('/login',[AuthentificationController::class,'loginPost']);
+/*Route::get('/admin',[loginController::class,'login'])->name('login');
+Route::post('login', [loginController::class, 'store']);
+Route::post('logout', [loginController::class, 'destroy'])->name('');
 Route::post('/login',[loginController::class,'authLogin']);
+
+
+Route::controller(loginController::class)->group(function () {
+ 
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'store')->name('login.action');
+ 
+    Route::get('logout', 'logout')->middleware('auth')->name('logout');
+});
+*/
 
 
 
@@ -72,7 +85,14 @@ Route::get('/classestore', [ClasseController::class, 'store'])->name('classe.sto
 Route::post('/classestore', [ClasseController::class, 'store'])->name('classe.store');
 Route::post('/classecreate', [ClasseController::class, 'create'])->name('classe.create');
 Route::get('/classecreate', [ClasseController::class, 'create'])->name('classe.create');
+
 Route::get('/listeclasse', [ClasseController::class, 'getClasse'])->name('classe.liste');
+Route::get('/modifierClasse/{id}', [ClasseController::class, 'updateClasse'])->name('modifierClasse');
+Route::get('/supprimerClasse/{id}', [ClasseController::class, 'deleteClasse'])->name('supprimerClasse');
+Route::get('/classe/{id}', [ClasseController::class, 'show'])->name('afficherClasse');
+Route::put('/classe/{id}', [ClasseController::class, 'updateClasse'])->name('classe.update');
+Route::delete('/classe/{id?}', [ClasseController::class, 'deleteClasse'])->name('classe.destroy');
+
 
 //formation
 
@@ -117,4 +137,8 @@ Route::get('/supprimerContact/{id}', [ContactController::class, 'deleteContact']
 Route::get('/contact/{id}', [ContactController::class, 'show'])->name('afficherContact');
 Route::put('/contact/{id}', [ContactController::class, 'updateContact'])->name('Contact.update');
 Route::delete('/contact/{id?}', [ContactController::class, 'deleteContact'])->name('contact.destroy');
+
+
+
+
 

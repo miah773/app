@@ -1,119 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>login</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/logo.png') }}">
+    <link href="{{asset('assets/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <title> Admin Login</title>
-    <link href="{{ asset('public/assets/img/favicon.png')}}" rel="icon">
-    <link href="{{ asset('public/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
-
-    <!-- Custom fonts for this template-->
-    <link href="{{url('assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet')}}" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="{{url('assets/css/sb-admin-2.min.css')}}" rel="stylesheet">
-    
-    
-    <!-- from home page-->
-   
-     <!-- Template Main CSS File -->
-    <link href="{{ asset('public/assets/css/style.css')}}" rel="stylesheet">
 
 </head>
-    
-<body class="bg-dark">
-<section id="topbar" class="d-flex align-items-center">
-    <img src="{{ asset('public/assets/img/flag.png')}}" alt="" class="img-fluid">
 
-    <div class="container d-flex justify-content-center justify-content-md-between ">
-        <div class="ministry_logo">
-            République Tunisienne<br>
-            <a href="http://www.mes.tn/" target="_blank" style="color: #ffffff; text-decoration: none;">Ministère de l’Enseignement Supérieur et de la Recherche Scientifique</a>
-            <br>
-            <a href="http://www.univgb.rnu.tn/" target="_blank" style="color: #ffffff; text-decoration: none; ">université de Gabès</a>
-        </div>
-    </div>
-</section>
-    <div class="container">
-
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-9 col-md-5">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome</h1>
+<body class="h-100" style="background-image: url('assets/img/backg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+    <div class="authincation h-100">
+        <div class="container-fluid h-100">
+            <div class="row justify-content-center h-100 align-items-center">
+                <div class="col-md-6">
+                    <div class="authincation-content">
+                        <div class="row no-gutters">
+                            <div class="col-xl-12">
+                                <div class="auth-form">
+                                    <h4 class="text-center mb-4">s'identifier </h4>
+                                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                                    <i class="fa-solid fa-lock fa-3x" style="color: #13357B; "></i>
                                     </div>
-                                    <form class="user" action="{{url("login")}}">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" required name="email"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                    @if(Session()->has('error'))
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ Session()->get('error') }}
+                                        </div>
+                                    @endif
+
+                                    <form action="{{route('login')}}" method="POST">
+                                    @csrf    
+                                    <div class="form-group">
+                                            <label><strong>Email</strong></label>
+                                            <input type="email" id="email" name="email" class="form-control"  required>
+                                            
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" name="passwkrd"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <label for ="password"><strong>mot de passe </strong></label>
+                                            <input id="password" name="password" type="password" class="form-control" required >
+                                            
                                         </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
+                                        <div class="form-row d-flex justify-content-between mt-4 mb-2">
+                                            <div class="form-group">
+                                                <div class="form-check ml-2">
+                                                    <input class="form-check-input" type="checkbox" id="basic_checkbox_1">
+                                                    <label class="form-check-label" for="basic_checkbox_1">se souvenir</label>
+                                                </div>
                                             </div>
+                                           
                                         </div>
-                                        <a href="" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
-                                        <hr>
-                                        <a href="" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary btn-block" style="background-color: #13357B; border-color: #564ab1;" >S'identifier</button>
                                         
+                                        </div>
                                     </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="">Create an Account!</a>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{url('assets/vendor/jquery/jquery.min.js')}}"></script>
-    <script src="{{url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-    <!-- Core plugin JavaScript-->
-    <script src="{{url('assets/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script type="{{ url('assets/js/sb-admin-2.min.js') }}"></script>
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="{{asset('assets/vendor/global.min.js')}}"></script>
+    <script src="{{asset('assets/js/quixnav-init.js')}}"></script>
+    <script src="{{asset('assets/js/custom.min.js')}}"></script>
 
 </body>
 

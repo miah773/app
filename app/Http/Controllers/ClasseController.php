@@ -39,7 +39,36 @@ class ClasseController extends Controller
 
       return view('admin/Classe/listeClasse',['data'=>$classe]);
     }
-
+    public function deleteClasse($id)
+    {
+        $classe = Classe::find($id);
+    
+        if ($classe) {
+            $classe->delete();
+            return redirect()->route('classe.liste')->with('message', 'Département a été bien supprimé');
+        } else {
+            return redirect()->route('classe.liste')->with('error', 'Département non trouvé');
+        }
+    }
+    
+    
+        public function updateClasse(Request $request){
+            $request->validate([
+                'nom' => 'required|string|max:255',
+               
+                
+            ]);
+            $classe = Classe::find($request->id);
+            if (!$classe) {
+                return redirect()->route('classe.liste')->with('error', 'classe introuvable');
+            }
+            $classe->nom  = $request->input('nom');
+            
+            
+           
+            $classe->save();
+            return redirect()->route('classe.liste')->with('message', 'classe a ete bien modifié');
+        }
 
     public function show($id)
 {

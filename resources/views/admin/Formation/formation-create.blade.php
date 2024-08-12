@@ -41,7 +41,7 @@
                            
                             <button class="btn btn-primary fw-medium py-3 px-4 mt-3" id="formSubmit" type="submit" style="width:100%">
                         <span class="spinner-border spinner-border-sm d-none me-2" aria-hidden="true"></span>
-                        Créer une classe
+                        Créer une formation
                     </button>
                             
                         </form>

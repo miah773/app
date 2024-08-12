@@ -45,7 +45,7 @@
                                     Nombre des étudiants
                                 </div>
                                 <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                  <!--  {{ $classCount }}-->
+                                  <!--  {{ $etudiantCount }}-->
                                 </div>
                             </div>
                             <div class="col-auto">
@@ -75,16 +75,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-lg-5">
+            <!--<div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
+                               Card Header - Dropdown
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">specialites</h6>
                                     </div>
                                 </div>
                                
-            <!-- More cards or content -->
+             More cards or content -->
         </div>
     </div>
 

@@ -55,7 +55,7 @@
                                                 </button>
 
 
-                                                <form action="{{ route('specialite.destroy', ['id' => $item->id]) }}" method="POST" style="display:inline;">
+                                                <form action="{{ route('classe.destroy', ['id' => $item->id]) }}" method="POST" style="display:inline;">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
@@ -85,7 +85,7 @@
 <div class="modal-dialog modal-lg">
 <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Modifier la spécialité</h5>
+                <h5 class="modal-title" id="editModalLabel">Modifier le classe</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -113,15 +113,16 @@ document.addEventListener('DOMContentLoaded', function () {
         var button = event.relatedTarget;
         var clientId = button.getAttribute('data-id');
         var form = document.getElementById('editForm');
-        form.setAttribute('action', '/specialite/' + clientId);
+        form.setAttribute('action', '/classe/' + clientId);
 
-        fetch('/specialite/' + clientId)
+        fetch('/classe/' + clientId)
             .then(response => response.json())
             .then(data => {
-                var sp = data.specialite;
+                var sp = data.classe;
                        
 
                 document.getElementById('editNom').value = sp.nom;
+              
              
             })
             .catch(error => {

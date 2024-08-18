@@ -15,4 +15,11 @@ class Classe extends Model
 
     // Les champs pouvant être remplis massivement
     protected $fillable = ['nom', 	'id-filiere'	];
+
+
+    
+    public function Emplois()
+    {
+        return $this->hasMany(Emplois::class, 'id_classe');
+    }
 }

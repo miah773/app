@@ -9,6 +9,8 @@ use App\Http\Controllers\FormationController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EtudiantController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\NouveautesController;
 
 
 use App\Http\Controllers\loginController;
@@ -78,6 +80,11 @@ Route::get('/404', function () {
 })->name('404');
 
 Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/dash', [IndexController::class, 'dash'])->name('admin.dash');
+
+Route::get('/admin',[loginController::class,'login']);
+Route::post('/login',[loginController::class,'authLogin']);
 
 //enseignant
 
@@ -148,6 +155,8 @@ Route::delete('/departement/{id?}', [DepartementController::class, 'deleteDepart
 
 //contact
 
+//contact
+
 Route::get('/contactstore', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/contactstore', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/contactcreate', [ContactController::class, 'create'])->name('contact.create');
@@ -180,3 +189,20 @@ Route::get('/supprimerEtudiant/{id}', [EtudiantController::class, 'deleteEtudian
 Route::get('/etudiant/{id}', [EtudiantController::class, 'show'])->name('afficherEtudiant');
 Route::put('/etudiant/{id}', [EtudiantController::class, 'updateEtudiant'])->name('etudiant.update');
 Route::delete('/etudiant/{id?}', [EtudiantController::class, 'deleteEtudiant'])->name('etudiant.destroy');
+
+
+
+
+
+//nouveautes
+Route::post('/nouveautesstore', [NouveautesController::class, 'store'])->name('nouveautes.store');
+Route::post('/nouveautescreate', [NouveautesController::class, 'create'])->name('nouveautes.create');
+Route::get('/nouveautescreate', [NouveautesController::class, 'create'])->name('nouveautes.create');
+Route::get('/listenouveautes', [NouveautesController::class, 'getNouveautes'])->name('listeNouveautes');
+
+
+Route::get('/modifierNouveautes/{id}', [NouveautesController::class, 'updateNouveautes'])->name('modifierNouveautes');
+Route::get('/supprimerNouveautes/{id}', [NouveautesController::class, 'deleteNouveautes'])->name('supprimerNouveautes');
+Route::get('/nouveautes/{id}', [NouveautesController::class, 'show'])->name('afficherNouveautes');
+Route::put('/nouveautes/{id}', [NouveautesController::class, 'updateDepartement'])->name('nouveautes.update');
+Route::delete('/nouveautes/{id?}', [NouveautesController::class, 'deleteDepartement'])->name('nouveautes.destroy');

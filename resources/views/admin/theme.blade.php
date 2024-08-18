@@ -6,14 +6,14 @@
 <head>
         
         <meta charset="utf-8" />
-        <title>Dashboard | Skote - Admin & Dashboard Template</title>
+        <title>dashboard</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesbrand" name="author" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+        <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
         <!-- Bootstrap Css -->
@@ -118,17 +118,17 @@
                     <div class="d-flex">
                         <!-- LOGO -->
                         <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
+                            <a href="{{route('admin.index')}}" class="logo logo-dark">
                               
                                 <span class="logo-lg">
-                                    <img src="{{ asset('assets/images/digilife.png') }}" alt="" height="42">
+                                    <img src="{{ asset('assets/images/logo.png') }}" alt="" height="42">
                                 </span>
                             </a>
 
-                            <a href="index.html" class="logo logo-light">
+                            <a href="{{route('admin.dash')}}" class="logo logo-light">
                                
                                 <span class="logo-lg">
-                                    <img src="{{ asset('assets/images/digilife.png') }}" alt="" height="50">
+                                    <img src="{{ asset('assets/images/logo.png') }}" alt="" height="50">
                                 </span>
                             </a>
                         </div>
@@ -184,7 +184,7 @@
                     
                             <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <img class="rounded-circle header-profile-user" src="{{ asset('images/LogoRapidos.png')}} "
+                            <img class="rounded-circle header-profile-user" src="{{ asset('assets/images/logo.png') }} "
                                     alt="administrateur">
                                 <span class="d-none d-xl-inline-block ms-1" key="t-henry">Admin</span>
                                 <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
@@ -192,8 +192,13 @@
                             <div class="dropdown-menu dropdown-menu-end">
                                 <!-- item-->
                                 <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> <span key="t-profile">Profile</span></a>
-                                <a class="dropdown-item d-block" href="#"><i class="bx bx-wrench font-size-16 align-middle me-1"></i> <span key="t-settings">Settings</span></a>
+                                
+                                
                                 <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
                                 <a class="dropdown-item text-danger" href=""
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -230,84 +235,22 @@
                             <li class="menu-title" key="t-menu">Menu</li>
 
                             <li>
-                                <a href="javascript: void(0);" class="waves-effect">
-                                    <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end">04</span>
-                                    <span key="t-dashboards">Dashboards</span>
+                                <a href="{{route('admin.dash')}}" class="waves-effect">
+                                    <i class="bx bx-home-circle"></i>
+                                    <span key="t-dashboards">Dashboard</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="index.html" key="t-default">Default</a></li>
-                                    <li><a href="dashboard-saas.html" key="t-saas">Saas</a></li>
-                                    <li><a href="dashboard-crypto.html" key="t-crypto">Crypto</a></li>
-                                    <li><a href="dashboard-blog.html" key="t-blog">Blog</a></li>
-                                </ul>
+                               
                             </li>
 
+                           
+
+
+                            <li class="menu-title" key="t-apps">Interfaces</li>
+
+                            <!--enseignant-->
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-layout"></i>
-                                    <span key="t-layouts">Layouts</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow" key="t-vertical">Vertical</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-light-sidebar.html" key="t-light-sidebar">Light Sidebar</a></li>
-                                            <li><a href="layouts-compact-sidebar.html" key="t-compact-sidebar">Compact Sidebar</a></li>
-                                            <li><a href="layouts-icon-sidebar.html" key="t-icon-sidebar">Icon Sidebar</a></li>
-                                            <li><a href="layouts-boxed.html" key="t-boxed-width">Boxed Width</a></li>
-                                            <li><a href="layouts-preloader.html" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-colored-sidebar.html" key="t-colored-sidebar">Colored Sidebar</a></li>
-                                            <li><a href="layouts-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow" key="t-horizontal">Horizontal</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="layouts-horizontal.html" key="t-horizontal">Horizontal</a></li>
-                                            <li><a href="layouts-hori-topbar-light.html" key="t-topbar-light">Topbar light</a></li>
-                                            <li><a href="layouts-hori-boxed-width.html" key="t-boxed-width">Boxed width</a></li>
-                                            <li><a href="layouts-hori-preloader.html" key="t-preloader">Preloader</a></li>
-                                            <li><a href="layouts-hori-colored-header.html" key="t-colored-topbar">Colored Header</a></li>
-                                            <li><a href="layouts-hori-scrollable.html" key="t-scrollable">Scrollable</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="menu-title" key="t-apps">Apps</li>
-
-                
-
-                            <li>
-                                <a href="javascript: void(0);" class="waves-effect">
-                                <a href="" key="t-tui-calendar"> <i class="bx bx-calendar"></i><span class="badge rounded-pill bg-success float-end">New</span>
-                                    <span key="t-dashboards">Calendrier</span></a>
-                                </a>
-                            </li>
-
-                       
-
-                            
-
-                          
-                          
-
-                          
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-briefcase-alt-2"></i>
-                                    <span key="t-projects">Classe</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{route('classe.liste')}}" key="t-p-list">Liste des classes</a></li>
-                                    <li><a href="{{route('classe.create')}}" key="t-create-new">Créer un nouveau</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-task"></i>
+                                <i class="fa-solid fa-chalkboard-user"></i>
                                     <span key="t-tasks">Enseignant</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
@@ -316,10 +259,47 @@
 
                                 </ul>
                             </li>
-
+                            <!--étudiant-->
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-bitcoin"></i>
+                                <i class="fa-solid fa-user-graduate"></i>
+                                <span key="t-tasks"> &Eacute;tudiant </span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('etudiant.liste')}}"key="t-p-list">Liste des &Eacute;tudiant </a></li>
+                                <li><a href="{{route('etudiant.create')}}" key="t-create-new">Créer un nouveau étudiant</a></li>
+
+                                </ul>
+                            </li>
+                            <!--classe-->
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="fa-solid fa-book"></i>
+                                <span key="t-projects">Classe</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('classe.liste')}}" key="t-p-list">Liste des classes</a></li>
+                                    <li><a href="{{route('classe.create')}}" key="t-create-new">Créer un nouveau</a></li>
+                                </ul>
+                            </li>
+
+
+
+                    
+                            <!--specialite-->
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                                    <span key="t-crypto">Spécialité</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('listespecialite')}}" key="t-p-list">Liste des spécialité</a></li>
+                                    <li><a href="{{route('specialite.create')}}" key="t-create-new">Créer un nouveau</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="fa-solid fa-book-open"></i>
                                     <span key="t-crypto">Formation</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
@@ -327,10 +307,9 @@
                                     <li><a href="{{route('formation.create')}}" key="t-create-new">créer une nouvelle formation</a></li>
                                 </ul>
                             </li>
-
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-bitcoin"></i>
+                                <i class="fa-regular fa-building"></i>
                                     <span key="t-crypto">Département</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
@@ -338,40 +317,20 @@
                                     <li><a href="{{route('departement.create')}}" key="t-create-new">Créer un nouveau</a></li>
                                 </ul>
                             </li>
-
+                            <!--nouveaute-->
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Filières</s></span>
+                                <i class="fa-regular fa-newspaper"></i>
+                                    <span key="t-crypto">Nouveauté</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{route('listespecialite')}}" key="t-p-list">Liste des Filières</a></li>
-                                    <li><a href="{{route('specialite.create')}}" key="t-create-new">Créer une nouvelle filière</a></li>
+                                    <li><a href="{{route('listeNouveautes')}}" key="t-p-list">Liste des nouveautés</a></li>
+                                    <li><a href="{{route('nouveautes.create')}}" key="t-create-new">Créer une nouvelle nouveauté</a></li>
                                 </ul>
                             </li>
+                            <!--contact-->
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Etudiants</s></span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="{{route('etudiant.liste')}}" key="t-p-list">Liste des étudiants</a></li>
-                                    <li><a href="{{route('etudiant.create')}}" key="t-create-new">Créer un nouveau étudiant</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-bitcoin"></i>
-                                    <span key="t-crypto">Temoinage</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="" key="t-p-list">Liste des temoinage</a></li>
-                                    <li><a href="" key="t-create-new">Créer un nouveau</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript: void(0);"" class="has-arrow waves-effect">
                                     <i class="bx bxs-user-detail"></i>
                                     <span key="t-crypto">Contact</span>
                                 </a>
@@ -382,18 +341,7 @@
                             </li>
                         
 
-                            <li>
-                                <a href="javascript: void(0);" class="waves-effect">
-                                    <span class="badge rounded-pill bg-success float-end" key="t-new">New</span>
-                                    <i class="bx bx-detail"></i>
-                                    <span key="t-blog">Blog</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="blog-list.html" key="t-blog-list">Blog List</a></li>
-                                    <li><a href="blog-grid.html" key="t-blog-grid">Blog Grid</a></li>
-                                    <li><a href="blog-details.html" key="t-blog-details">Blog Details</a></li>
-                                </ul>
-                            </li>
+                           
 
                         
 
@@ -408,6 +356,24 @@
 
             <!-- ============================================================== -->
             <!-- Start right Content here -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- ============================================================== -->
             <div class="main-content">
 
@@ -415,20 +381,7 @@
                 </div>
                 <!-- End Page-content -->
 
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <script>document.write(new Date().getFullYear())</script> © Skote.
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="text-sm-end d-none d-sm-block">
-                                    Design & Develop by Themesbrand
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
+              
             </div>
             <!-- end main content-->
 

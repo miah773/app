@@ -16,5 +16,8 @@ class Enseignant extends Model
     // Les champs pouvant être remplis massivement
     protected $fillable = ['nom', 'prenom', 'email', 'poste', 'id_specialite', 'tel', 'CIN', 'date_rec','id_departement'];
     
-    
+    public function Enseignant()
+    {
+        return $this->hasMany(Enseignant::class, 'id_enseignant');
+    }
 }

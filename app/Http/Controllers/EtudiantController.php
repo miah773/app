@@ -76,7 +76,7 @@ public function show($id)
 
     // Renvoie la réponse JSON avec les deux jeux de données
     return response()->json($data);
-    /*
+    
 }
 public function deleteEtudiant($id){
     $etudiant = Etudiant::find($id);
@@ -92,6 +92,6 @@ public function updateEtudiant(Request $request){
 }
 
 
-*/
 
-}}
+
+}

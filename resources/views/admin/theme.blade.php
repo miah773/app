@@ -297,6 +297,19 @@
                                     <li><a href="{{route('specialite.create')}}" key="t-create-new">Créer un nouveau</a></li>
                                 </ul>
                             </li>
+<<<<<<< HEAD
+                            <!--étudiant-->
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="fa-solid fa-user-graduate"></i>
+                                <span key="t-tasks"> &Eacute;tudiant </span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('etudiant.liste')}}"key="t-p-list">Liste des &Eacute;tudiant </a></li>
+                                <li><a href="{{route('etudiant.create')}}" key="t-create-new">Créer un nouveau étudiant</a></li>
+=======
+>>>>>>> main/main
+
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="fa-solid fa-book-open"></i>

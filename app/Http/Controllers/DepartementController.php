@@ -46,11 +46,18 @@ class DepartementController extends Controller
     }
 
 
-    public function deleteDepartement($id){
-        $departement = Departement::find($id);
+    public function deleteDepartement($id)
+{
+    $departement = Departement::find($id);
+
+    if ($departement) {
         $departement->delete();
-         return redirect()->route('listedepartement')->with('message', 'département a ete bien supprimé');
+        return redirect()->route('listedepartement')->with('message', 'Département a été bien supprimé');
+    } else {
+        return redirect()->route('listedepartement')->with('error', 'Département non trouvé');
     }
+}
+
 
     public function updateDepartement(Request $request){
         $request->validate([

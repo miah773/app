@@ -8,12 +8,17 @@ use App\Http\Controllers\ClasseController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\DepartementController;
 use App\Http\Controllers\ContactController;
+<<<<<<< HEAD
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\AuthentificationController;
+use App\Http\Controllers\EtudiantController;
+=======
 use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\NouveautesController;
 
+>>>>>>> main/main
 
-use App\Http\Controllers\loginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,17 +33,87 @@ use App\Http\Controllers\loginController;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/index2', function () {
     return view('index2');
 })->name('index2');
 
+<<<<<<< HEAD
+=======
+Route::get('/index2', function () {
+    return view('index2');
+})->name('index2');
+
+>>>>>>> main/main
 Route::get('/reglementation', function () {
     return view('reglementation');
 })->name('reglementation');
 Route::get('/conseils', function () {
     return view('conseils');
 })->name('conseils');
+<<<<<<< HEAD
+
+Route::get('/services', function () {
+    return view('services');
+})->name('services');
+
+Route::get('/packages', function () {
+    return view('packages');
+})->name('packages');
+
+Route::get('/statistiques', function () {
+    return view('statistiques');
+})->name('statistiques');
+
+Route::get('/motdedirecteur', function () {
+    return view('motdedirecteur');
+})->name('motdedirecteur');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/infrastructure', function () {
+    return view('infrastructure');
+})->name('infrastructure');
+
+Route::get('/organigramme', function () {
+    return view('organigramme');
+})->name('organigramme');
+
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/404', function () {
+    return view('404');
+})->name('404');
+
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/dash', [IndexController::class, 'dash'])->name('admin.dash');
+
+Route::get('/login',[AuthentificationController::class,'login'])->name("login");
+Route::post('/login',[AuthentificationController::class,'loginPost']);
+/*Route::get('/admin',[loginController::class,'login'])->name('login');
+Route::post('login', [loginController::class, 'store']);
+Route::post('logout', [loginController::class, 'destroy'])->name('');
+Route::post('/login',[loginController::class,'authLogin']);
+
+
+Route::controller(loginController::class)->group(function () {
+ 
+    Route::get('login', 'login')->name('login');
+    Route::post('login', 'store')->name('login.action');
+ 
+    Route::get('logout', 'logout')->middleware('auth')->name('logout');
+});
+*/
+
+
+
+=======
 
 Route::get('/services', function () {
     return view('services');
@@ -80,11 +155,7 @@ Route::get('/404', function () {
 })->name('404');
 
 Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/index', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/dash', [IndexController::class, 'dash'])->name('admin.dash');
-
-Route::get('/admin',[loginController::class,'login']);
-Route::post('/login',[loginController::class,'authLogin']);
+>>>>>>> main/main
 
 //enseignant
 
@@ -122,7 +193,14 @@ Route::get('/classestore', [ClasseController::class, 'store'])->name('classe.sto
 Route::post('/classestore', [ClasseController::class, 'store'])->name('classe.store');
 Route::post('/classecreate', [ClasseController::class, 'create'])->name('classe.create');
 Route::get('/classecreate', [ClasseController::class, 'create'])->name('classe.create');
+
 Route::get('/listeclasse', [ClasseController::class, 'getClasse'])->name('classe.liste');
+Route::get('/modifierClasse/{id}', [ClasseController::class, 'updateClasse'])->name('modifierClasse');
+Route::get('/supprimerClasse/{id}', [ClasseController::class, 'deleteClasse'])->name('supprimerClasse');
+Route::get('/classe/{id}', [ClasseController::class, 'show'])->name('afficherClasse');
+Route::put('/classe/{id}', [ClasseController::class, 'updateClasse'])->name('classe.update');
+Route::delete('/classe/{id?}', [ClasseController::class, 'deleteClasse'])->name('classe.destroy');
+
 
 //formation
 
@@ -170,6 +248,8 @@ Route::get('/contact/{id}', [ContactController::class, 'show'])->name('afficherC
 Route::put('/contact/{id}', [ContactController::class, 'updateContact'])->name('Contact.update');
 Route::delete('/contact/{id?}', [ContactController::class, 'deleteContact'])->name('contact.destroy');
 
+<<<<<<< HEAD
+=======
 
 
 
@@ -177,6 +257,7 @@ Route::delete('/contact/{id?}', [ContactController::class, 'deleteContact'])->na
 
 
 
+>>>>>>> main/main
 //etudiant
 
 Route::get('/etudiantstore', [EtudiantController::class, 'store'])->name('etudiant.store');
@@ -189,20 +270,9 @@ Route::get('/supprimerEtudiant/{id}', [EtudiantController::class, 'deleteEtudian
 Route::get('/etudiant/{id}', [EtudiantController::class, 'show'])->name('afficherEtudiant');
 Route::put('/etudiant/{id}', [EtudiantController::class, 'updateEtudiant'])->name('etudiant.update');
 Route::delete('/etudiant/{id?}', [EtudiantController::class, 'deleteEtudiant'])->name('etudiant.destroy');
+<<<<<<< HEAD
 
 
 
-
-
-//nouveautes
-Route::post('/nouveautesstore', [NouveautesController::class, 'store'])->name('nouveautes.store');
-Route::post('/nouveautescreate', [NouveautesController::class, 'create'])->name('nouveautes.create');
-Route::get('/nouveautescreate', [NouveautesController::class, 'create'])->name('nouveautes.create');
-Route::get('/listenouveautes', [NouveautesController::class, 'getNouveautes'])->name('listeNouveautes');
-
-
-Route::get('/modifierNouveautes/{id}', [NouveautesController::class, 'updateNouveautes'])->name('modifierNouveautes');
-Route::get('/supprimerNouveautes/{id}', [NouveautesController::class, 'deleteNouveautes'])->name('supprimerNouveautes');
-Route::get('/nouveautes/{id}', [NouveautesController::class, 'show'])->name('afficherNouveautes');
-Route::put('/nouveautes/{id}', [NouveautesController::class, 'updateDepartement'])->name('nouveautes.update');
-Route::delete('/nouveautes/{id?}', [NouveautesController::class, 'deleteDepartement'])->name('nouveautes.destroy');
+=======
+>>>>>>> main/main

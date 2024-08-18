@@ -46,6 +46,7 @@
                                     <td style="vertical-align: middle;">{{ $item->enseignant_tel }}</td>
                                     <td style="vertical-align: middle;">{{ $item->enseignant_CIN }}</td>
                                     <td style="vertical-align: middle;">{{ $item->enseignant_date_rec }}</td>
+<<<<<<< HEAD
                                     <td style="vertical-align: middle;">{{ $item->departement_nom }}</td>
 
                                     <td>
@@ -56,6 +57,27 @@
                 data-id="{{ $item->id }}">
             Modifier
         </button>
+
+        <form action="{{ route('Enseignant.destroy', ['id' => $item->id]) }}" method="POST" style="margin: 0;">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger btn-sm">
+                Supprimer
+            </button>
+        </form>
+    </div>
+</td>
+=======
+                                    <td style="vertical-align: middle;">{{ $item->departement_nom }}</td> <!-- Utilisation de departement_nom pour accéder au département -->
+                                    
+                                    <td style="vertical-align: middle;">
+                                        <button class="btn btn-warning btn-sm" 
+                                                data-bs-toggle="modal" 
+                                                data-bs-target="#editModal" 
+                                                data-id="{{ $item->id }}">
+                                            Modifier
+                                        </button>
+>>>>>>> main/main
 
         <form action="{{ route('Enseignant.destroy', ['id' => $item->id]) }}" method="POST" style="margin: 0;">
             @csrf

@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Etudiant;
 
 use App\Models\Classe;
+<<<<<<< HEAD
+use Illuminate\Support\Facades\DB;
+=======
 use DB;
+>>>>>>> main/main
 
 class EtudiantController extends Controller
 {
@@ -25,11 +29,54 @@ class EtudiantController extends Controller
             'Nom_etud' => 'required|string|max:255',
             'Prenom_etud' => 'required|string|max:255',
             'Age_etud' => 'required|string|max:2',
+<<<<<<< HEAD
+            'id_classe' => 'required|exists:classe,id', // Adjusted table name to 'classes'
+=======
+>>>>>>> main/main
             'Redoublant' => 'required|boolean',
             'Email' => 'required|string|email|max:255',
             'Num_tel' => 'required|string|max:8',
         ]);
     
+<<<<<<< HEAD
+        
+            // Create a new Etudiant instance
+            $etudiant = new Etudiant();
+            $etudiant->Num_inscription = $request->input('Num_inscription');
+            $etudiant->Nom_etud = $request->input('Nom_etud');
+            $etudiant->Prenom_etud = $request->input('Prenom_etud');
+            $etudiant->Age_etud = $request->input('Age_etud');
+            $etudiant->id_classe = $request->input('id_classe');
+            $etudiant->Redoublant = (bool) $request->input('Redoublant');
+            $etudiant->Email = $request->input('Email');
+            $etudiant->Num_tel = $request->input('Num_tel');
+    
+            // Save the Etudiant instance to the database
+            $etudiant->save();
+    
+            // Redirect to the student list with a success message
+            return redirect()->route('etudiant.create')->with('success', 'Étudiant créé avec succès');
+        
+    }
+    
+    
+
+
+    public function getEtudiant()
+    {
+        $etudiant = DB::table('etudiant')
+            ->join('classe', 'etudiant.id_classe', '=', 'classe.id')
+            ->select('etudiant.id','etudiant.Num_inscription as num_inscrip', 
+                     'etudiant.Nom_etud as etudiant_nom', 'etudiant.Prenom_etud as etudiant_prenom',
+                     'etudiant.Age_etud as etudiant_age', 'classe.nom as classe_nom',
+                     'etudiant.Redoublant as Redoublant', 'etudiant.Email as Email',
+                     'etudiant.Num_tel as Num_tel')
+            ->get();    
+    
+        return view('admin/Etudiant/listeEtudiant', ['data' => $etudiant]);
+    }
+    
+=======
         // Create a new Etudiant instance
         $etudiant = new Etudiant();
         $etudiant->Num_inscription = $request->input('Num_inscription');
@@ -61,6 +108,7 @@ public function getEtudiant(){
 
   return view('admin/Etudiant/listeEtudiant',['data'=>$etudiant]);
 }
+>>>>>>> main/main
 
 public function show($id)
 {

@@ -34,9 +34,16 @@
                                                 <th>Nom</th>
                                                 <th>Prénom</th>
                                                 <th>Age</th>
+<<<<<<< HEAD
+                                                <th>Classe</th>
+                                                <th>Email</th>
+                                                <th>Numéro de téléphone</th>
+                                                
+=======
                                                 <th>Email</th>
                                                 <th>Numéro de téléphone</th>
                                                 <th>Classe</th>
+>>>>>>> main/main
                                                 <th>Redoublant</th>
 
                                                 <th>Action</th>
@@ -55,14 +62,22 @@
                                                 <td style="vertical-align: middle; width:40%; ">{{$item->etudiant_nom}}</td>
                                                 <td style="vertical-align: middle; width:40%; ">{{$item->etudiant_prenom}}</td>
                                                 <td style="vertical-align: middle; width:40%; ">{{$item->etudiant_age}}</td>
+<<<<<<< HEAD
+                                                <td style="vertical-align: middle; width:40%; ">{{$item->classe_nom}}</td>
+                                                
+=======
+>>>>>>> main/main
                                                 <td style="vertical-align: middle; width:40%; ">{{$item->Redoublant}}</td>
                                                 <td style="vertical-align: middle; width:40%; ">{{$item->Email}}</td>
                                                 <td style="vertical-align: middle; width:40%; ">{{$item->Num_tel}}</td>
 
+<<<<<<< HEAD
+=======
 
                                               
 
                                                 <td style="vertical-align: middle; width:40%; ">{{$item->classe_nom}}</td>
+>>>>>>> main/main
                                                 <td style="vertical-align: middle; width:20%; ">
                                                 <button class="btn btn-warning btn-sm" 
                                                         data-bs-toggle="modal" 
@@ -70,6 +85,12 @@
                                                         data-id="{{ $item->id }}">
                                                     Modifier
                                                 </button>
+<<<<<<< HEAD
+                                              
+
+                                                
+=======
+>>>>>>> main/main
 
 
                                                 <form action="{{ route('etudiant.destroy', ['id' => $item->id]) }}" method="POST" style="display:inline;">
